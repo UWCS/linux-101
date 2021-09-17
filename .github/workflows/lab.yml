@@ -1,0 +1,22 @@
+name: lab
+
+on:
+  push:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup Git repository
+        uses: actions/checkout@v2
+
+      - name: Compile report
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: lab.tex
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2 
+        with:
+          name: PDF
+          path: lab.pdf
