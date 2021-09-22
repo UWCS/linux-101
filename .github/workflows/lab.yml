@@ -10,13 +10,17 @@ jobs:
       - name: Setup Git repository
         uses: actions/checkout@v2
 
-      - name: Compile report
+      - name: Compile Sheets
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: lab.tex
+          root_file: |
+            lab.tex
+            cheatsheet.tex
 
-      - name: Upload artifact
+      - name: Upload Artifacts
         uses: actions/upload-artifact@v2 
         with:
           name: PDF
-          path: lab.pdf
+          path: |
+            lab.pdf 
+            cheatsheet.pdf

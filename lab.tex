@@ -109,10 +109,12 @@ If we want to be able to remove folders, we can override the default behaviour u
 Removes the specified file or directory. 
 If non-empty, \bfseries all contents are deleted. \normalfont 
 
-Flags are optional arguments declared after the command name that add additional functionality. To view a command's full list of arguments, you can type \texttt{man <command>}.
+Flags are optional arguments declared after the command name that add additional functionality. 
+To view a command's full list of arguments, you can type \texttt{man <command>}.
 
 \bfseries Task 2: \normalfont 
-With all of this in mind, it’s time to make some files and folders! We'll walk you through the process of replicating (then partially deleting) the folder structure below.
+With all of this in mind, it’s time to make some files and folders! 
+We'll walk you through the process of replicating (then partially deleting) the folder structure below.
 
 \begin{verbatim}
                             ~\
@@ -127,13 +129,11 @@ With all of this in mind, it’s time to make some files and folders! We'll walk
 
 While in the home directory, we create the \texttt{foo} directory and it's \texttt{bar.baz} file:
 
-\begin{verbatim}
-    mkdir foo
-    touch foo/bar.baz
-\end{verbatim}
+\qquad \texttt{mkdir foo} \\
+\qquad \texttt{touch foo/bar.baz}
 
-To create the \texttt{public$\_$html} directory and its contents, a similar pattern is followed. 
-You might think to immediately create both folders using \texttt{mkdir public$\_$html/css}, but this will fail, as \texttt{public$\_$html} does not exist yet. 
+To create the \texttt{public\_html} directory and its contents, a similar pattern is followed. 
+You might think to immediately create both folders using \texttt{mkdir public\_html/css}, but this will fail, as \texttt{public$\_$html} does not exist yet. 
 We can override this behaviour with the \texttt{-p} flag, which creates intermediate directories when required. 
 From here, try creating \texttt{index.html} and \texttt{app.css} for yourself.
 
@@ -155,7 +155,8 @@ When it comes to editing files, there's a variety of programs available to you.
 And, just like a programmer's preferred distribution of Linux, it's a large point of contention among us! 
 For this lab, we'll be using the fairly modern but basic \texttt{atom} text editor.
 
-\bfseries Task 4: \normalfont Using the \texttt{atom <file path>} command to open a file, open up the  \texttt{index.html} file we created and insert some HTML. 
+\bfseries Task 4: \normalfont 
+Using the \texttt{atom <file path>} command to open a file, open up the \texttt{index.html} file we created and insert some HTML. 
 Here's an example page:
 
 \qquad \texttt{<!DOCTYPE html>} \\
@@ -184,7 +185,10 @@ Once you've done this, you can find your shiny new webpage at:
     -rw-r----- 1 u1234567 dcsugrad    42 Sep 16 19:37 important.txt
 \end{verbatim}
 
-The \texttt{l} flag for the \texttt{ls} command is very useful, as it shows us detailed information on files and folders. For example, we can see who owns it, the group it belongs to, the size in bytes, and when it was last modified. But what we're interested in is the permissions. They determine not only who can access what, but how:
+The \texttt{l} flag for the \texttt{ls} command is very useful, as it shows us detailed information on files and folders. 
+For example, we can see who owns it, the group it belongs to, the size in bytes, and when it was last modified. 
+But what we're interested in is the permissions. 
+They determine not only who can access what, but how:
 
 \centering
 \begin{tabular}{l|l|l}
@@ -214,8 +218,8 @@ In short - the first character indicates if something is a directory, the next t
 
 These permissions can be modified using the \texttt{chmod} command.
 
-The syntax for using \texttt{chmod} is extensive, with two main ways to achieve the same goal. The 
-first explicitly states the permissions for each permission group, like so:
+The syntax for using \texttt{chmod} is extensive, with two main ways to achieve the same goal. 
+The first explicitly states the permissions for each permission group, like so:
 
 \qquad \texttt{chmod u=rwx,g=rx,o=r <file path>}
 
@@ -223,29 +227,42 @@ The second way uses an octal digit to represent each permission group:
 
 \qquad \texttt{chmod 754 <file path>} 
 
-Each digit represents user, group and other permissions respectively. These digits are calculated by taking 0, and adding values to it depending on wanted permissions. \\
+Each digit represents user, group and other permissions respectively. 
+These digits are calculated by taking 0, and adding values to it depending on wanted permissions. \\
 +4 for read, +2 for write, and +1 for execute.
 
-The \texttt{-R} option can be used to perform a recursive permission change. This will modify all files and sub-directories in the directory you specify with your chosen permissions.
+The \texttt{-R} option can be used to perform a recursive permission change. 
+This will modify all files and sub-directories in the directory you specify with your chosen permissions.
 
-\bfseries Task 5: \normalfont Fix the permissions for your web page. For \texttt{index.html}, give the user read and write permissions, and let the other two permission groups read. Everything else in the \texttt{public$\_$html} directory (including the directory itself) should be set to \texttt{rwx} for the user, and \texttt{rw} for the other two permission groups. Make sure everything is correct afterwards.
+\bfseries Task 5: \normalfont 
+Fix the permissions for your web page. 
+For \texttt{index.html}, give the user read and write permissions, and let the other two permission groups read. 
+Everything else in the \texttt{public$\_$html} directory (including the directory itself) should be set to \texttt{rwx} for the user, and \texttt{rw} for the other two permission groups. 
+Make sure everything is correct afterwards.
 
 Now, time to see our public web page in all of its underwhelming glory! \\ 
 This concludes the main part of the lab.
 
 \section*{Bonus Tasks}
 
-\bfseries B1: \normalfont Navigate to the \texttt{public$\_$html} folder. What do you think these commands do?
+\bfseries B1: \normalfont 
+Execute these commands in the \texttt{public$\_$html} folder. 
+What do you think they do?
 
 \begin{enumerate}
-    \item \large \texttt{cd .} \normalsize
-    \item \large \texttt{ls -a} \normalsize
+    \item \large \texttt{cd --} \normalsize
+    \item \large \texttt{ls -lat > output.txt} \normalsize
     \item \large \texttt{grep p index.html} \normalsize
 \end{enumerate}
 
-\bfseries B2: \normalfont To help organise your work, try creating a \texttt{modules} directory. You might also want to add sub-directories within it for the ones you're going to take, such as \texttt{cs118} and \texttt{cs126}.
+\bfseries B2: \normalfont 
+To help organise your work, try creating a \texttt{modules} directory. 
+You might also want to add sub-directories within it for the ones you're going to take, such as \texttt{cs118} and \texttt{cs126}.
 
-\bfseries B3: \normalfont Your web page works, but it might be a bit... lacking? Try using another editor, such as Visual Studio Code (\texttt{code} in the terminal) to improve it. Feel free to open up a web browser and look up some HTML tags ...or even ask the people around you?
+\bfseries B3: \normalfont 
+Your web page works, but it might be a bit... lacking? 
+Try using another editor, such as Visual Studio Code (\texttt{code} in the terminal) to improve it. 
+Feel free to open up a web browser and look up some HTML tags ...or even ask the people around you?
 
 \section*{What next?}
 

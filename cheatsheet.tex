@@ -1,0 +1,129 @@
+\documentclass[a4paper,11pt,parskip=half-]{scrartcl}
+
+% Packages
+
+\usepackage[english]{babel}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{ascii}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{graphicx}
+\usepackage[a4paper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
+\usepackage[defaultfam,tabular,lining]{montserrat}
+\usepackage[T1]{fontenc}
+\usepackage{wrapfig}
+
+
+\graphicspath{{images/}}
+\pagestyle{empty}
+\setkomafont{section}{\usefont{T1}{fvs}{b}{n}\Large}
+\renewcommand*\oldstylenums[1]{{\fontfamily{Montserrat-TOsF}\selectfont #1}}
+\renewcommand{\ttdefault}{pcr}
+\renewcommand{\arraystretch}{1.5}
+
+
+\begin{document}
+
+\begin{wrapfigure}{r}{0.2\textwidth}
+    \vspace{-10pt} % Move shield in line with text
+    \includegraphics[width=0.9\linewidth]{shield.png}
+    \vspace{-100pt} % Prevent text below from moving out of the way
+\end{wrapfigure}
+
+\normalfont \Huge \bfseries UWCS Linux 101 Cheatsheet
+
+\normalfont\LARGE Programs, Commands \& Tips
+\normalsize
+
+\section*{Programs}
+
+You usually just need to type the name of a program into the terminal to run it, with a few exceptions. You can usually pass a filepath as an argument too. Here are some examples:
+
+\centering
+\begin{tabular}{l|c}
+        Type & Examples \\
+        \hline
+        \large Browsers \normalfont & \texttt{chrome}, \texttt{firefox}, \texttt{konqueror} \\
+        \large Text Editors \normalfont & \texttt{atom}, \texttt{code}, \texttt{kate}, \texttt{gedit}, \texttt{vim}, \texttt{emacs}, \texttt{nano} \\
+        \large File Explorers \normalfont & \texttt{dolphin}, \texttt{nautilus} \\
+        \large PDF Viewers \normalfont & \texttt{okular}, \texttt{evince} \\
+\end{tabular}
+
+\raggedright
+
+We'd recommend exploring each of these applications in your own time, and find the ones you prefer. Some offer more functionality, others offer ease of use.
+
+\section*{Tips}
+
+You can clear the shell either by typing \texttt{clear}, or using the shortcut \texttt{Ctrl+L}.
+
+You can navigate through your command history using the up and down arrow keys.
+
+You can press tab to autocomplete the name of a file, if there is no ambiguity.
+
+Generally, you should try to avoid creating directories with a space character in their names. 
+This is because arguments passed to a command are separated by spaces.
+If you do, you'll need to surround the name in quotes or put a backslash before every space.
+
+If you're running Python, be careful to pick the correct version of it! 
+\texttt{python} refers to Python 2, \texttt{python3} to Python 3.6, and we also have \texttt{python3.8}.
+
+The method to exit the shell program you're currently using can vary depending on what it is.
+Three of the most common ways to exit are \texttt{Ctrl+C}, \texttt{Ctrl+Z}, and \texttt{q}.
+
+The same issue carries over to using the built-in command documentation. 
+Although we used \texttt{man} in the lab, this won't always work - two alternatives are the \texttt{---help} flag and \texttt{info} command.
+
+If you want to install an IDE with more features such as IntelliJ, PyCharm, or Eclipse, you can 
+- but be mindful not to run out of storage space when doing so! 
+You get 6GB in your first year, this is raised by 3GB for each subsequent year of your degree. 
+To see how much you've got left, use the \texttt{quota} command.
+
+Although it might seem pointless to use the terminal when you have a file explorer like Dolphin available, it doesn't offer as much functionality. Not only that, but over time you'll find that it might be faster to navigate using the terminal...
+
+\newpage
+
+\section*{Commands and Options}
+
+(You can compose all single-letter command options: \texttt{-a} and \texttt{-l} can instead be \texttt{-al})
+
+\Large \texttt{help} \normalsize \\
+Built-in function help
+
+\Large \texttt{ls <path>} \normalsize \\
+List directory contents of the specified path
+
+\qquad \texttt{-l} | Output in a detailed format \\
+\qquad \texttt{-R} | Recursively list the contents of subdirectories \\
+\qquad \texttt{-t} | Sort in order of when the file was last modified
+
+\Large \texttt{cd <path>} \normalsize \\
+Change directory
+
+\Large \texttt{touch <filepath>} \normalsize \\
+Make empty files
+
+\Large \texttt{mkdir <filepath>} \normalsize \\
+Make directories
+\begin{itemize}
+    \item \texttt{-p} | Create intermediate directories as required (if not used, full path must exist)
+\end{itemize}
+
+\Large \texttt{rm <filepath>} \normalsize \\
+Remove directory entities
+\begin{itemize}
+    \item \texttt{-r} | Recursively attempt to remove each subdirectory and file.
+    \item \texttt{-f} | Remove files without confirmation, if applicable
+\end{itemize}
+
+\Large \texttt{cp <source file> <target file>} \normalsize \\
+Copy files from one location to another
+\begin{itemize}
+    \item \texttt{-r} | Can copy directory contents recursively.
+    \item \texttt{-n} | Do not overwrite any existing files.
+    \item \texttt{-u} | Only copy if the source file is newer than the destination file.
+\end{itemize}
+
+
+
+\end{document}
