@@ -168,11 +168,11 @@ Here's an example page:
 \qquad \qquad \qquad \texttt{<h1>Hello world!</h1>} \\
 \qquad \qquad \qquad \texttt{<p>This is a test page</p>} \\
 \qquad \qquad \texttt{</body>} \\
-\qquad \texttt{<html>}
+\qquad \texttt{</html>}
 
 Once you've done this, you can find your shiny new webpage at:
 
-\qquad \texttt{https://dcs.warwick.ac.uk/~u[your student id]}
+\qquad \texttt{https://dcs.warwick.ac.uk/$\sim$u[your student id]}
 
 ...or at least you would, if you had the permissions to access it.
 
@@ -237,8 +237,12 @@ This will modify all files and sub-directories in the directory you specify with
 \bfseries Task 5: \normalfont 
 Fix the permissions for your web page. 
 For \texttt{index.html}, give the user read and write permissions, and let the other two permission groups read. 
-Everything else in the \texttt{public$\_$html} directory (including the directory itself) should be set to \texttt{rwx} for the user, and \texttt{rw} for the other two permission groups. 
+Everything else in the \texttt{public$\_$html} directory (including the directory itself) should be set to \texttt{rwx} for the user, and \texttt{rx} for the other two permission groups. 
 Make sure everything is correct afterwards.
+
+Finally, you'll want to add execute permissions in the home directory itself. Type:
+
+\qquad \texttt{chmod a+x .}
 
 Now, time to see our public web page in all of its underwhelming glory! \\ 
 This concludes the main part of the lab.
@@ -272,6 +276,8 @@ Make sure to check out the department's in-depth systems guide that includes top
 
 This is available at \href{https://warwick.ac.uk/fac/sci/dcs/intranet/user_guide/}{\texttt{https://warwick.ac.uk/fac/sci/dcs/intranet/user$\_$guide/}}
 
-See you around!
+If you're interested in joining the Computing society, or want to ask any other questions, we'd be happy to welcome you in our Discord community:
+
+\href{https://discord.uwcs.uk}{\texttt{https://discord.uwcs.uk}} - See you around!
 
 \end{document}

@@ -59,7 +59,8 @@ You can clear the shell either by typing \texttt{clear}, or using the shortcut \
 
 You can navigate through your command history using the up and down arrow keys.
 
-You can press tab to autocomplete a command if there is no ambiguity. Double tapping tab will show a list of possible completions if there is ambiguity
+You can press tab to autocomplete a command if there is no ambiguity. 
+Double tapping tab will show a list of possible completions if there is ambiguity.
 
 Generally, you should try to avoid creating directories with a space character in their names. 
 This is because arguments passed to a command are separated by spaces.
@@ -79,7 +80,8 @@ If you want to install an IDE with more features such as IntelliJ, PyCharm, or E
 You get 9GB in your first year, this is raised by 3GB for each subsequent year of your degree. 
 To see how much you've got left, use the \texttt{quota} command.
 
-Although it might seem pointless to use the terminal when you have a file explorer like Dolphin available, it doesn't offer as much functionality. Not only that, but over time you'll find that it might be faster to navigate using the terminal...
+Although it might seem pointless to use the terminal when you have a file explorer like Dolphin available, it doesn't offer as much functionality. 
+Not only that, but over time you'll find that it might be faster to navigate using the terminal...
 
 \newpage
 
@@ -116,6 +118,11 @@ Remove directory entities
     \item \texttt{-f} | Remove files without confirmation, if applicable
 \end{itemize}
 
+\Large \texttt{mv <source file> <target file>} \normalsize \\
+Move files from one location to another; this is also how you rename them
+\begin{itemize}
+    \item \texttt{-r} | Can move directory contents recursively.
+\end{itemize}
 
 \Large \texttt{cp <source file> <target file>} \normalsize \\
 Copy files from one location to another
