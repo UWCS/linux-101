@@ -12,6 +12,7 @@
 \usepackage[defaultfam,tabular,lining]{montserrat}
 \usepackage[T1]{fontenc}
 \usepackage{wrapfig}
+\usepackage{pmboxdraw}
 
 
 \graphicspath{{images/}}
@@ -117,14 +118,13 @@ With all of this in mind, it’s time to make some files and folders!
 We'll walk you through the process of replicating (then partially deleting) the folder structure below.
 
 \begin{verbatim}
-                            ~\
-                             |-foo  
-                             | \-bar.baz  
-                             |  
-                             \-public_html    
-                               |-index.html    
-                               \-css      
-                                 \-app.css
+                        ~
+                        ├── foo
+                        │   └── bar.baz
+                        └── public_html
+                            ├── css
+                            │   └── app.css
+                            └── index.html
 \end{verbatim}
 
 While in the home directory, we create the \texttt{foo} directory and it's \texttt{bar.baz} file:
