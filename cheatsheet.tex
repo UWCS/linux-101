@@ -60,24 +60,23 @@ You can clear the shell either by typing \texttt{clear}, or using the shortcut \
 You can navigate through your command history using the up and down arrow keys.
 
 You can press tab to autocomplete a command if there is no ambiguity. 
-Double tapping tab will show a list of possible completions if there is ambiguity.
+Double tapping tab will show a list of possible completions if there is ambiguity (this can vary between terminal emulators).
 
 Generally, you should try to avoid creating directories with a space character in their names. 
-This is because arguments passed to a command are separated by spaces.
-If you do, you'll need to surround the name in quotes or put a backslash before every space.
+This is because command arguments are separated by spaces, which can be overridden by wrapping the argument in quotes or use a blackslash to escape the spaces.
 
 If you're running Python, be careful to pick the correct version of it! 
 \texttt{python} refers to Python 2, \texttt{python3} to Python 3.6, and we also have \texttt{python3.8}.
 
 The method to exit the shell program you're currently using can vary depending on what it is.
-Three of the most common ways to exit are \texttt{Ctrl+C}, \texttt{Ctrl+Z}, and \texttt{q}.
+Three of the most common ways to exit are \texttt{Ctrl+C}, \texttt{Ctrl+Z}.
 
 The same issue carries over to using the built-in command documentation. 
-Although we used \texttt{man} in the lab, this won't always work - two alternatives are the \texttt{---help} flag and \texttt{info} command.
+Although we used \texttt{man} in the lab, this won't always work - two alternatives are the \texttt{--help} flag and \texttt{info} command. Command help isn't fully standardized, but one of these works in most cases.
 
 If you want to install an IDE with more features such as IntelliJ, PyCharm, or Eclipse, you can 
 - but be mindful not to run out of storage space when doing so! 
-You get 9GB in your first year, this is raised by 3GB for each subsequent year of your degree. 
+You get 12GB in your first year, this is raised by 3GB for each subsequent year of your degree. 
 To see how much you've got left, use the \texttt{quota} command.
 
 Although it might seem pointless to use the terminal when you have a file explorer like Dolphin available, it doesn't offer as much functionality. 
@@ -97,6 +96,7 @@ List directory contents of the specified path
 
 \qquad \texttt{-l} | Output in a detailed format \\
 \qquad \texttt{-R} | Recursively list the contents of subdirectories \\
+\qquad \texttt{-a} | Include hidden files (which start with a \texttt{.}) \\
 \qquad \texttt{-t} | Sort in order of when the file was last modified
 
 \Large \texttt{cd <path>} \normalsize \\
@@ -136,6 +136,9 @@ Copy files from one location to another
 Modify the permissions of a file
 \begin{itemize}
     \item \texttt{-R} | Recursively modifies permissions inside a subdirectory.
+    \item User types: \texttt{u} user, \texttt{g} user group, \texttt{o} other
+    \item Permissions \texttt{r} read, \texttt{w} write, \texttt{x} execute
+    \item Permissions formats: \texttt{u+x} add execute to user, \texttt{g=rw} set group permission to read & write; \texttt{755} set permissions to \texttt{u=rwx,g=rx,o=rx}.
 \end{itemize}
 
 
