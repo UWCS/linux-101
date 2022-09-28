@@ -62,35 +62,35 @@ But what can you actually access from here? Let's use our first command to find 
 
 All you have to do is type \texttt{ls} and hit enter to execute the command. 
 What do you see? 
-For the moment, there should just be a few folders, also referred to as sub-directories. If you want to see some more details, use \texttt{ls -l} 
+For the moment, there should just be a few folders, also referred to as sub-directories.
 If you want to find out what's inside, you need to be able to change directory:
 
 \Large \texttt{cd <path>} \normalsize - Changes directory to the specified path.
 
 Like most commands we will encounter from here on out, this one takes an argument, \texttt{path}. 
-We use this argument to describe where we would like to change directory to.
+This argument specifies exactly where we'd like to change directory to.
 
 \centering
 \begin{tabular}{l|c}
     Example & Explanation \\
     \hline
     \Large \texttt{cd scripts} \normalfont & Change to the \texttt{scripts} folder in the current directory.  \\
-    \Large \texttt{cd ..} \normalfont & Change to the parent directory (a level above your current one). \\
+    \Large \texttt{cd ..} \normalfont & Change to the parent directory (a level above the current one). \\
     \Large \texttt{cd $\sim$} \normalfont & Change to the home directory (useful if you get lost).
 \end{tabular}
 
 \raggedright
 
-You can also chain directory moves together! 
-Moving up a directory (\texttt{cd ..}) then to \texttt{cd scripts} could  be combined into \texttt{cd ../scripts}. These can be chained as deeply as you need.
+You can also chain multiple directory moves together! 
+For example, moving a directory with \texttt{cd ..} then down with \texttt{cd scripts} could be combined into just \texttt{cd ../scripts}.
 
 \bfseries Task 1: \normalfont 
-Using the terminal, try exploring all the folders accessible from your home directory. 
+Before moving on, use the terminal to explore all the folders accessible from your home directory. 
 Make sure to list out all the contents - is there anything inside? 
 
 \newpage
 
-By now, you have sadly realised all the folders are empty. 
+By now, you have sadly realised the folders are empty. 
 So, let's aim to fix that.
 
 \section*{Creation and Deletion}
@@ -104,7 +104,7 @@ Note: the square brackets denote that an argument is optional.
 
 \texttt{mkdir} is used to create sub-directories in a similar way (replace \texttt{touch} with \texttt{mkdir}).
 Files can be removed using the \texttt{rm} command (again, replace \texttt{touch}). 
-If we want to be able to remove folders, we can override the default behaviour using \texttt{ rm -r}: the recursive flag:
+If we want to be able to remove folders, we can override the default behaviour using the \texttt{-r} (recursive) flag:
 
 \Large \texttt{rm -r [<path>/]<name>} \normalsize \\
 Removes the specified file or directory. 
@@ -133,7 +133,7 @@ While in the home directory, we create the \texttt{foo} directory and it's \text
 \qquad \texttt{touch foo/bar.baz}
 
 To create the \texttt{public\_html} directory and its contents, a similar pattern is followed. 
-You might think to create both folders using \texttt{mkdir public\_html/css}, but this will fail, as \texttt{mkdir} requires all the path up to the penultimate part existing already.
+You might think to create both folders using \texttt{mkdir public\_html/css}, but this will fail, as \texttt{mkdir} requires all but the last part of the path to exist already.
 We can override this behaviour with the \texttt{-p} flag, which creates intermediate directories when required. 
 From here, try creating \texttt{index.html} and \texttt{app.css} for yourself.
 
@@ -153,11 +153,11 @@ Now that you feel more comfortable, let's make a little website...
 
 When it comes to editing files, there's a variety of programs available to you. 
 And, just like a programmer's preferred distribution of Linux, it's a large point of contention among us! 
-For this lab, we'll be using VS Code as a text editor.
+For this lab, we'll be using Visual Studio Code to do this.
 
 \bfseries Task 4: \normalfont 
-Using the \texttt{code <path>} command to open a file/folder, open up the \texttt{index.html} file we created and insert some HTML. 
-Here's an example page:
+Using the \texttt{code <path>} command on a file/folder, open up the \texttt{index.html} file we created and insert some HTML for your site. 
+Here's a very basic example page:
 
 \qquad \texttt{<!DOCTYPE html>} \\
 \qquad \texttt{<html>} \\
@@ -214,7 +214,7 @@ Each of these permissions can be applied to three different types of users:
 
 \raggedright
 
-In short - the first character indicates if something is a directory, the next three represent user permissions, the next three group permissions, and the final three other users. Most of the time, you will only be concerned with the user permissions, and sometimes the other permissions to make a file globally accessible.
+In short - the first character indicates if something is a directory, the next three represent user permissions, the next three group permissions, and the final three other users.
 
 These permissions can be modified using the \texttt{chmod} command.
 
@@ -265,8 +265,9 @@ You might also want to add sub-directories within it for the ones you're going t
 
 \bfseries B3: \normalfont 
 Your web page works, but it might be a bit... lacking? 
- 
-Have a go sprucing up your website. Feel free to add some HTML or CSS if you like ...or ask the people around you to have a look at their websites?
+Try improving your website. 
+Feel free to add some HTML or CSS if you like. 
+You could make it look pretty... or make it look cursed.
 
 \section*{What next?}
 
@@ -276,8 +277,8 @@ Make sure to check out the department's in-depth systems guide that includes top
 
 This is available at \href{https://warwick.ac.uk/fac/sci/dcs/intranet/user_guide/}{\texttt{https://warwick.ac.uk/fac/sci/dcs/intranet/user$\_$guide/}}
 
-If you're interested in joining the Computing society, or want to ask any other questions, we'd be happy to welcome you in our Discord community:
+If you're interested in joining the Computing society, or want to ask any other questions, we'd be happy to welcome you in our community - \href{https://go.uwcs.uk/links}{\texttt{https://go.uwcs.uk/links}}
 
-\href{https://discord.uwcs.uk}{\texttt{https://discord.uwcs.uk}} - See you around!
+See you around!
 
 \end{document}
